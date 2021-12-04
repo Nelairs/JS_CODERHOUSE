@@ -64,6 +64,10 @@ function verVariador() {
 }
 
 function totalVariadores() {
+    let total = 0;
+    for (const idEquipo of equiposLista) {
+        total++;
+    }
 
-
+    console.log('El total de variadores almacenados es:' + total);
 }
