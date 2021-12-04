@@ -21,7 +21,7 @@ class Equipo {
 alert('Bienvenido al ingreso de Variadores.\nEnter para continuar.');
 
 while (exit) {
-    opt = parseInt(prompt('Que desea hacer? \n1-Cargar Variador.\n2-Ver variador \n3-Promedio reparados. \n4-Total Variadores.\n5-Salir.'));
+    opt = parseInt(prompt('Que desea hacer? \n1-Cargar Variador.\n2-Ver variador \n3-Total variadores.\n4-Salir.'));
 
     switch (opt) {
         case 1:
@@ -36,12 +36,9 @@ while (exit) {
             verVariador();
             break;
         case 3:
-            promedioReparados();
-            break;
-        case 4:
             totalVariadores();
             break;
-        case 5:
+        case 4:
             exit = false;
             break;
         default:
