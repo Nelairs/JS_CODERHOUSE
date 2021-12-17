@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>PROGRAMA DATOS VARIADORES</title>
+
+</head>
+
+<body>
+    <h1>AGENDA VARIADORES</h1>
+    <form id='registroVariadores'>
+        <input type="number" placeholder="Numero de equipo">
+        <br>
+        <select id="marcaVariador">
+            <option value="" selected disabled hidden>SELECCIONAR MARCA</option>
+            <option value="SCH">SCHNEIDER</option>
+            <option value="DAN">DANFOSS</option>
+            <option value="LS">LS</option>
+            <option value="ABB">ABB</option>
+        </select>
+        <br>
+        <select id="estadoVariador" placeholder="Estado del Variador">
+            <option value="" selected disabled hidden>SELECCIONAR ESTADO ACTUAL</option>
+            <option value="1">1. Reparado.</option>
+            <option value="2">2. Limpieza/Mantenimiento.</option>
+            <option value="3">3. En espera.</option>
+
+        </select>
+        <br>
+        <input type="submit">
+    </form>
+    <div id="listaVariadores">
+
+
+    </div>
+
+
+
+    <script src="js/main_ETCHENIQUE.js"></script>
+</body>
+
+</html>
