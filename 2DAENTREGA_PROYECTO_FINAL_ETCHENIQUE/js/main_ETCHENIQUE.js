@@ -10,6 +10,8 @@ let idEquipo = 0;
 let nroEquipo = 0;
 let marcaEquipo = ' ';
 let equiposLista = [];
+let newEquiposLista = [];
+let almacenVariadores = [];
 
 
 // DECLARACION DE CLASE CONSTRUCTORA PARA EL ARMADO DE OBJETO
@@ -23,46 +25,11 @@ class Equipo {
     }
 }
 
-
-// INICIO DEL PROGRAMA
-
-aniadirDOM();
-
-console.log(JSON.parse(localStorage.getItem('saveVFDs')));
-
-let miForm = document.getElementById('registroVariadores');
-
-miForm.onsubmit = (e) => {
-
-    e.preventDefault();
-
-    const inputs = miForm.children;
-
-    nroEquipo = inputs[0].value;
-
-    //marcaEquipo = inputs[2].value;
-    let obt = document.getElementById('marcaVariador').value;
-
-    marcaEquipo = obt;
-
-    obt = document.getElementById('estadoVariador').value;
-
-    estado = obt;
-
-    agregarVariador();
-
-    aniadirDOM();
-
-    saveVariadores();
-}
-
-
-
 // FUNCION PARA PUSHEAR EL OBJETO AL ARRAY 
 function agregarVariador() {
     equiposLista.push(new Equipo(idEquipo, nroEquipo, marcaEquipo, estado));
     idEquipo++;
-    console.log(equiposLista);
+    //console.log(equiposLista);
 }
 
 //  FUNCION PARA BUSCAR POR NRO DE EQUIPO EL VARIADOR
@@ -81,6 +48,8 @@ function totalVariadores() {
 
     console.log('El total de variadores almacenados es:' + total);
 }
+
+//---------------------------------------------------FUNCIONES-----------------------------------------------------------------------------
 
 //pushear DOM
 
@@ -110,24 +79,22 @@ function aniadirDOM() {
 }
 
 function saveVariadores() {
-    if (JSON.parse(localStorage.getItem('saveVFDs')) == null) {
-        console.log('DENTRO DEL IF');
-        localStorage.setItem('saveVFDs', JSON.stringify(equiposLista));
-    } else {
-        let almacenVariadores = JSON.parse(localStorage.getItem('saveVFDs'));
 
-        //console.log(almacenVariadores);
-        console.log('DENTRO DEL ELSE');
+    almacenVariadores = [];
 
-        console.log(equiposLista);
-        equiposLista.concat(almacenVariadores);
-        console.log(equiposLista);
+    almacenVariadores = JSON.parse(localStorage.getItem('saveVFDs'));
 
-        localStorage.setItem('saveVFDs', JSON.stringify(equiposLista));
+    newEquiposLista = [];
+
+    newEquiposLista = equiposLista.concat(almacenVariadores);
+
+    //console.log(almacenVariadores);
+    //console.log(equiposLista);
+    //console.log(newEquiposLista);
 
 
+    localStorage.setItem('saveVFDs', JSON.stringify(newEquiposLista));
 
-    }
 }
 
 function loadVariadores() {
@@ -139,4 +106,37 @@ function loadVariadores() {
     }
 
 
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------------------------------
+
+// INICIO DEL PROGRAMA
+
+console.log(JSON.parse(localStorage.getItem('saveVFDs')));
+
+let miForm = document.getElementById('registroVariadores');
+
+miForm.onsubmit = (e) => {
+
+    e.preventDefault();
+
+    const inputs = miForm.children;
+
+    nroEquipo = inputs[0].value;
+
+    //marcaEquipo = inputs[2].value;
+    let obt = document.getElementById('marcaVariador').value;
+
+    marcaEquipo = obt;
+
+    obt = document.getElementById('estadoVariador').value;
+
+    estado = obt;
+
+    agregarVariador();
+
+    aniadirDOM();
+
+    saveVariadores();
 }
