@@ -20,38 +20,20 @@ class Equipo {
 
 // INICIO DEL PROGRAMA
 
-//console.log(JSON.parse(localStorage.getItem('saveVFDs')));
-
-let miForm = document.getElementById('registroVariadores');
-//let miForm = $('#registroVariadores');
-
-console.log(miForm);
-
-miForm.onsubmit = (e) => {
+$('#registroVariadores').submit(function(e) {
 
     e.preventDefault();
 
-    const inputs = miForm.children;
+    nroEquipo = $('#numeroVariador').val();
 
-    nroEquipo = inputs[0].value;
+    marcaEquipo = $('#marcaVariador').val();
 
-    //marcaEquipo = inputs[2].value;
-
-    let obt = document.getElementById('marcaVariador').value;
-    //let obt = $('#marcaVariador').value;
-
-    marcaEquipo = obt;
-
-    obt = document.getElementById('estadoVariador').value;
-    //obt = $('#estadoVariador').value;
-
-    estado = obt;
+    estado = $('#estadoVariador').val();
 
     agregarVariador();
-
-    //aniadirDOM();
 
     aniadirDOMjQuery();
 
     saveVariadores();
-}
+
+});

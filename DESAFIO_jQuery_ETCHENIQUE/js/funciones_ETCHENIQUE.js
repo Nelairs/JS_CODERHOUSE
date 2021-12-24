@@ -29,11 +29,6 @@ function saveVariadores() {
 
     newEquiposLista = equiposLista.concat(almacenVariadores);
 
-    //console.log(almacenVariadores);
-    //console.log(equiposLista);
-    //console.log(newEquiposLista);
-
-
     localStorage.setItem('saveVFDs', JSON.stringify(newEquiposLista));
 
 }
