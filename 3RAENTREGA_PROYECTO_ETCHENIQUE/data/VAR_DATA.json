@@ -1,0 +1,11 @@
+[{ "nroEquipo": 1111, "marca": "SCH", "estado": 1 },
+    { "nroEquipo": 2222, "marca": "DAN", "estado": 2 },
+    { "nroEquipo": 3333, "marca": "ABB", "estado": 3 },
+    { "nroEquipo": 4444, "marca": "LS", "estado": 1 },
+    { "nroEquipo": 5555, "marca": "SCH", "estado": 2 },
+    { "nroEquipo": 6666, "marca": "DAN", "estado": 3 },
+    { "nroEquipo": 7777, "marca": "ABB", "estado": 1 },
+    { "nroEquipo": 8888, "marca": "LS", "estado": 2 },
+    { "nroEquipo": 9999, "marca": "SCH", "estado": 3 },
+    { "nroEquipo": 1010, "marca": "DAN", "estado": 1 }
+]
