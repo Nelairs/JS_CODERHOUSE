@@ -19,7 +19,7 @@ class Equipo {
 
 // INICIO DEL PROGRAMA
 
-callJSON();
+getJSON();
 
 $('#registroVariadores').submit(function(e) {
 
@@ -33,7 +33,9 @@ $('#registroVariadores').submit(function(e) {
 
     agregarVariador();
 
-    saveVariadores();
+    saveVariadores(); //local storage va a ser reemplazado por postJSON
+
+    postJSON();
 
     $('#alertaCarga').fadeIn(1500).delay(2000).fadeOut(1500);
 
