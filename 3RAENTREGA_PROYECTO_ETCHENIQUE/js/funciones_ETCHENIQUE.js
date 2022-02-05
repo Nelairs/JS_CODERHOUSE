@@ -79,11 +79,14 @@ function postJSON() {
 
     $.ajax({
         type: 'POST',
-        url: 'data/VAR_TEST.json',
+        url: '/3RAENTREGA_PROYECTO_ETCHENIQUE/data/VAR_TEST.json',
         data: JSON.stringify(equiposLista), // or JSON.stringify ({name: 'jonas'}),
-        success: function(data) { alert('data: ' + data); },
-        contentType: "application/json",
-        dataType: 'json'
+        success: function() { alert('cargado'); },
+
+        error: function() {
+            alert('error guardado');
+        }
+
     });
 
 }
